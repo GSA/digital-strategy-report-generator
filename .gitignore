@@ -1,0 +1,4 @@
+data/*.json
+data/*.xml
+data/*.ttl
+.DS_Store
