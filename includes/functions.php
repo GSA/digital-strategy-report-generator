@@ -316,6 +316,12 @@ function dgs_get_live( $file ) {
 
 }
 
+/**
+ * Determines the maximum number of values for a given item
+ * @param object $item the item object
+ * @param array the import array
+ * @return int the maximum number of responses to any field within the item
+ */ 
 function dgs_max_values( $item, $import ) {
 
 	$max = 1;
