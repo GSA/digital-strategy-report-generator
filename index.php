@@ -66,8 +66,7 @@ foreach ( $dgs_items as $item ) {
 	
 	//if there's no import, or the field's not in the import, just make one field
 	//otherwise, make N field for each imported value
-	$i = 0;
-	while( $i < dgs_max_values( $item, $import ) ) {
+	for ( $i = 0, $max = dgs_max_values( $item, $import ); $i < $max; $i++ ) {
 	
 		//wrap fields in div so we can dupliate if a multiple response action item
 		$class = ( $i == 0 ) ? 'fields' : 'fields border-top';
@@ -102,9 +101,7 @@ foreach ( $dgs_items as $item ) {
 		
 		//close fields wrapper div
 		$form->add( '</div>' );
-	
-		$i++;
-			
+				
 	}
 	
 	if ( $item->multiple ) 
