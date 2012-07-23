@@ -71,6 +71,11 @@ $dgs_items = array(
 							'name' => 'customer',
 							'label' => 'Main Customer',
 						)),
+					new DGS_field( array( 
+							'type' => 'text',
+							'name' => 'uii',
+							'label' => 'Unique Investment Identifier',
+						)),
 				)
 			)),
 
@@ -138,6 +143,11 @@ $dgs_items = array(
 							'type' => 'text',
 							'name' => 'customer',
 							'label' => 'Main Customer',
+						)),
+					new DGS_field( array( 
+							'type' => 'text',
+							'name' => 'uii',
+							'label' => 'Unique Investment Identifier',
 						)),
 				)
 			)),
