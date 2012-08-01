@@ -51,7 +51,9 @@ function dgs_singular( $plural ) {
 		'agencies' => 'agency',
 		'options'  => 'option',
 		'fields'   => 'field',
-		'items'    => 'item' );
+		'items'    => 'item',
+		'bureaus'  => 'bureau',
+	);
 
 	//no translation, safe fallback, don't err out
 	if ( !array_key_exists( $plural, $trans ) )
