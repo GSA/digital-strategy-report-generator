@@ -33,7 +33,7 @@ dgs_sort($dgs_items);
 <?php	
 
 if (file_exists(DGS_REPORT_DIR . '/digitalstrategy.json')) {
-  $_FILES['import']['tmp_name'] = DGS_REPORT_DIR . '/digitalstrategy.json')) {
+  $_FILES['import']['tmp_name'] = DGS_REPORT_DIR . '/digitalstrategy.json';
   $_FILES['import']['autoimport'] = TRUE;
 }
 
