@@ -5,6 +5,7 @@
  */
 
 define( 'DGS_BASE_DIR', dirname( __FILE__ ) ); //base dir for includes
+define( 'DGS_REPORT_DIR', ''); //directory where reports will reside
 define( 'DGS_SCHEMA_BASE', 'https://raw.github.com/GSA/digital-strategy/1/' ); //base url for schema
 define( 'DGS_TTL', 3600 ); //TTL of disk / in-memory cache ( 60*60 = 3600 )
 

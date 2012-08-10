@@ -51,9 +51,7 @@ function dgs_singular( $plural ) {
 		'agencies' => 'agency',
 		'options'  => 'option',
 		'fields'   => 'field',
-		'items'    => 'item',
-		'bureaus'  => 'bureau',
-	);
+		'items'    => 'item' );
 
 	//no translation, safe fallback, don't err out
 	if ( !array_key_exists( $plural, $trans ) )
@@ -95,7 +93,7 @@ function dgs_zip( $dir, $destination ) {
 	foreach ( glob( $dir . '/*' ) as $path ) {
 
 		//make path within zip relative to zip base, not server root
-		$local_path = str_replace( $dir, '', $path );
+		$local_path = str_replace( "$dir/", '', $path );
 
 		//add file
 		$zip->addFile( realpath( $path ), $local_path );
@@ -217,7 +215,7 @@ function dgs_values() {
 	$values = array();
 
 	//santity checks
-	if ( empty( $_FILES ) || empty( $_FILES['import'] ) || $_FILES['import']['error']  )
+	if ( empty( $_FILES ) || empty( $_FILES['import'] ) || ( $_FILES['import']['error'] && !$_FILES['import']['autoimport'] ) )
 		return array();
 
 	//attemp to JSON decode upload
@@ -345,4 +343,10 @@ function dgs_max_values( $item, $import ) {
 
 	return $max;
 	
+}
+function dgs_sort(&$items) {
+  foreach ($items as $obj) {
+    $order[$obj->id] = $obj;
+  }
+  array_multisort($order, SORT_ASC, $items);
 }
