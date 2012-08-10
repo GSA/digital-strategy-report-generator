@@ -6,11 +6,11 @@ Generates reports to describe agencies' progress in realizing the goals of the P
 Goals
 ----------
 
-The President's Digital Strategy requires each agency to report progress on the document's goals at /digitalstrategy of their primary domain. This open-source project seeks to simplify that process and provide agenceis with a turn-key solution to generate such reports.
+The President's Digital Strategy requires each agency to report progress on the document's goals at /digitalstrategy of their primary domain. This open-source project seeks to simplify that process and provide agencies with a turn-key solution to generate such reports.
 
 Non-Government Developers
 -------------------------
-The [agency list and report schema](https://github.com/GSA/digital-strategy) this project are based off of, as well as it's underlying code could be used to build tools that aggregate agencies' progress, or for example, centralize the various APIs and datasets released as a result of the process.
+The [agency list and report schema](https://github.com/GSA/digital-strategy) this project is based on, as well as it's underlying code could be used to build tools that aggregate agencies' progress, or for example, centralize the various APIs and datasets released as a result of the process.
 
 Requirements
 ------------
@@ -28,9 +28,9 @@ How it Works
 
 The first time you load index.php, the generator will make a call to [two JSON files hosted in GSA's GitHub repository](https://github.com/GSA/digital-strategy). These files contain the schema which defines the report, as well as a list of federal agencies and their common abreviations. These files will be cached locally to disk and will remain there for up to an hour.
 
-It will then spit out a simple form representing the fields as described in the schema file. Upon submitting the form, you will recieve a valid HTML, XML, and JSON repreentation of your responses. The JSON and XML versions are designed to be placed, as is, at agency.gov/digitalstrategy.xml and agency.gov/digitalstrategy.json. The HTML version is designed to be pasted into a CMS or used as is.
+It will then spit out a simple form representing the fields as described in the schema file. Upon submitting the form, you will recieve a zip file download containing valid HTML, XML, and JSON representations of your responses. The JSON and XML versions are designed to be placed, as is, at agency.gov/digitalstrategy.xml and agency.gov/digitalstrategy.json. The HTML version is designed to be pasted into a CMS or used as is.  Adding a value to the DGS_REPORT_DIR constant in the load.php file will cause the script to add unzipped versions of the reports to that directory.
 
-Previously generated reports can be update via the import function at the top of the form.
+Previously generated reports can be updated via the import function at the top of the form.  If the DGS_REPORT_DIR constant is specified the form will automatically load values from digitalstrategy.json if it exists.
 
 Contributing
 ------------
