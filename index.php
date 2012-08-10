@@ -32,7 +32,8 @@ dgs_sort($dgs_items);
 	<div class="span8 offset2">
 <?php	
 
-if (file_exists($_FILES['import']['tmp_name'] = DGS_REPORT_DIR . '/digitalstrategy.json')) {
+if (file_exists(DGS_REPORT_DIR . '/digitalstrategy.json')) {
+  $_FILES['import']['tmp_name'] = DGS_REPORT_DIR . '/digitalstrategy.json')) {
   $_FILES['import']['autoimport'] = TRUE;
 }
 
