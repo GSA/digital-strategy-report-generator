@@ -11,7 +11,9 @@ if ( !empty( $_POST ) )
 	include DGS_BASE_DIR . '/includes/generate.php';
 
 //output header
-dgs_header(); ?>
+dgs_header();
+dgs_sort($dgs_items);
+?>
 
 <h1>Slash Digital Strategy Generator</h1>
 
@@ -26,11 +28,14 @@ dgs_header(); ?>
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="span8 offset2">
-	
-<?php
+<?php	
+
+if (file_exists(DGS_REPORT_DIR . '/digitalstrategy.json')) {
+  $_FILES['import']['tmp_name'] = DGS_REPORT_DIR . '/digitalstrategy.json';
+  $_FILES['import']['autoimport'] = TRUE;
+}
 
 //init form
 $form = Form::create()->setClass( 'form-horizontal' )->setMethod( 'post' );

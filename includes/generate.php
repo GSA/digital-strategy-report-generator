@@ -51,31 +51,44 @@ foreach ( $dgs_items as &$item ) {
 }
 
 //create temporary scratch directory
-$dir = DGS_BASE_DIR . '/tmp/' . md5( time() );
-mkdir( $dir );
+$dir['tmp'] = '/tmp/' . md5( time() );
 
-//json
-file_put_contents( $dir . '/digital-strategy.json', json_encode( $report ) );
+// Check for a value in the report directory constant.
+if (DGS_REPORT_DIR) {
+  // Files will be created in the specified report directory and will not be zipped.
+  $dir['rpt'] = DGS_REPORT_DIR;
+}
+// Files will be created in a temporary directory and added to zip file.
+// Create the temporary directory.
+mkdir( $dir['tmp'] );
+// Create zip file.
+$zipfile = "{$report->agency}-report.zip";
 
-//xml
-$xml = new SimpleXMLElement( '<report></report>' );
-$xml = dgs_to_xml( $report, $xml );
-file_put_contents(  $dir . '/digital-strategy.xml', dgs_tidy_xml( $xml ) );
+foreach ($dir as $id => $loc) {
+  //json
+  file_put_contents( $loc . '/digitalstrategy.json', json_encode( $report ) );
 
-//html
-file_put_contents( $dir . '/digital-strategy.html', dgs_to_html( $report ) );
+  //xml
+  $xml = new SimpleXMLElement( '<report></report>' );
+  $xml = dgs_to_xml( $report, $xml );
+  file_put_contents(  $loc . '/digitalstrategy.xml', dgs_tidy_xml( $xml ) );
 
-$zip = $dir . "/{$report->agency}-report.zip";
-dgs_zip( $dir, $zip );
+  //html
+  file_put_contents( $loc . '/digitalstrategy.html', dgs_to_html( $report ) );
+}
+
+$zip = "{$dir['tmp']}/$zipfile";
+dgs_zip( $dir['tmp'], $zip );
 
 //send headers
 header( 'Content-Type: application/zip' );
-header( "Content-Disposition: attachment; filename={$report->agency}-report.zip" );
+header( "Content-Disposition: attachment; filename=$zipfile" );
 header( 'Content-Length: ' . filesize( $zip ) );
 
 //read file
 readfile( $zip );
 
 //cleanup
-dgs_cleanup( $dir );
+dgs_cleanup( $dir['tmp'] );
+
 exit();
