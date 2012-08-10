@@ -51,7 +51,7 @@ foreach ( $dgs_items as &$item ) {
 }
 
 //create temporary scratch directory
-$dir['tmp'] = DGS_BASE_DIR . '/tmp/' . md5( time() );
+$dir['tmp'] = '/tmp/' . md5( time() );
 
 // Check for a value in the report directory constant.
 if (DGS_REPORT_DIR) {
