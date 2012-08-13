@@ -83,7 +83,7 @@ foreach ( $dgs_items as $item ) {
 			$type = $field->type;
 			
 			//create the form field
-			$name = ( $item->multiple ) ? $field->name . "[$i]" : $field->name;
+			$name = ( $item->multiple ) ? $field->name . '[]' : $field->name;
 			$form_field = Form::$type( $name )->setLabel( $field->label );
 			    	
 			//loop through options, if need be
