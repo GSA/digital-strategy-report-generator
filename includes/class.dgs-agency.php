@@ -7,7 +7,7 @@ class DGS_Agency {
 
 	function __construct( $name, $id, $url ) {
 
-		foreach ( get_object_vars( &$this ) as $var => $value )
+		foreach ( get_object_vars( $this ) as $var => $value )
 			$this->$var = $$var;
 
 	}
