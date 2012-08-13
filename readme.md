@@ -54,6 +54,7 @@ Changelog
 ### 1.1 ###
 * Better PHP 5.4 compatability (removed calltime pass by reference)
 * Added option to write generated file to web server for easier programatic access (props [Bill Severe](https://github.com/bsevere))
+* Auto-import and propegation of generated values if report directory is set in config file (props [Bill Severe](https://github.com/bsevere))
 * Uses PHP's default temporary directory, rather than the `tmp/` folder within the project to generate files, simplifying installation and improving portability (props [Bill Severe](https://github.com/bsevere))
 * Moved configuration to separate file to simplifying customization
 * Better sorting of agencies and action items in datafiles and in the generator (props [Bill Severe](https://github.com/bsevere))

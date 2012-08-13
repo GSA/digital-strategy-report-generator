@@ -76,11 +76,11 @@ dgs_zip( $dir, "{$dir}/$filename" );
 
 //send headers
 header( 'Content-Type: application/zip' );
-header( "Content-Disposition: attachment; filename=$zipfile" );
-header( 'Content-Length: ' . filesize( $zip ) );
+header( "Content-Disposition: attachment; filename=$filename" );
+header( 'Content-Length: ' . filesize( "{$dir}/$filename" ) );
 
 //read file
-readfile( $zip );
+readfile( "{$dir}/$filename" );
 
 //Check for a value in the report directory constant
 //if it exists, move the files into the report directory for easy access before clearing the scratch directory
