@@ -4,7 +4,7 @@
  */
  ?>
  	<footer>
- 		Version 1.0
+ 		Generator Version <?php echo DGS_VERSION; ?>
  	</footer>
     </div> <!-- /container -->
 

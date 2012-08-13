@@ -16,6 +16,9 @@ require_once DGS_BASE_DIR . '/includes/functions.php';
 //bootrstrap form generator
 require_once DGS_BASE_DIR . '/includes/forms/load.php';
 
+//generator version, bump with each release
+define( 'DGS_VERSION', '1.1' );
+
 //bootstrap DSG Generator Core
 foreach ( array( 'items', 'agencies' ) as $plural ) {
 

@@ -16,12 +16,20 @@ Requirements
 ------------
 
 * PHP (e.g., LAMP, XAMPP, MAMP, etc.)
-* The /tmp/ must be writable by PHP (`chmod 0777 /tmp/` works well)
 
-Usage
------
+Usage and installation
+----------------------
 
-Load index.php in your favorite HTML5 web browser
+1. Clone or extract the project into your web server's `htdocs` or `public_html` folder
+2. Copy `config/config.sample.php` to `config/config.php`
+2. Navigate to the project's folder in your favorite HTML5 web browser (e.g., `http://localhost/dgs/`)
+
+Usage as a service
+------------------
+
+1. Complete step 1 above
+2. POST data directly to the `index.php` file using any language or script of your choice
+3. Recieve a zip file containing the generated content
 
 How it Works
 ------------
@@ -36,6 +44,22 @@ Contributing
 ------------
 
 Federal employees and members of the public are encouraged to contribue to the project by forking and submitting a pull request. All code must be licensed to the public under GPLv2 or later.
+
+Changelog
+---------
+
+### 1.0 ###
+* Initial Release
+
+### 1.1 ###
+* Better PHP 5.4 compatability (removed calltime pass by reference)
+* Added option to write generated file to web server for easier programatic access (props [Bill Severe](https://github.com/bsevere))
+* Uses PHP's default temporary directory, rather than the `tmp/` folder within the project to generate files, simplifying installation and improving portability (props [Bill Severe](https://github.com/bsevere))
+* Moved configuration to separate file to simplifying customization
+* Better sorting of agencies and action items in datafiles and in the generator (props [Bill Severe](https://github.com/bsevere))
+* Abilitity to bypass GitHub service and local cache to force generation of fresh datafiles
+* Clarified requirements, installation instructions, and usage as a service
+* Corrected typos in readme (props [Bill Severe](https://github.com/bsevere))
 
 License
 -------

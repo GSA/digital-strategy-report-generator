@@ -359,3 +359,9 @@ function dgs_sort( &$items, $field = 'id' , $dir = SORT_ASC ) {
     array_multisort( $order, $dir, $items );
     
 }
+
+function dgs_prepend_generator_version( $array ) {
+
+	return array_merge( array( 'generator_version' => DGS_VERSION ), $array );
+	
+}
