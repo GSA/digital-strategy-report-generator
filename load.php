@@ -4,10 +4,11 @@
  * Will auto-propegate local copies of data files if they don't exist
  */
 
-define( 'DGS_BASE_DIR', dirname( __FILE__ ) ); //base dir for includes
-define( 'DGS_REPORT_DIR', ''); //directory where reports will reside
-define( 'DGS_SCHEMA_BASE', 'https://raw.github.com/GSA/digital-strategy/1/' ); //base url for schema
-define( 'DGS_TTL', 3600 ); //TTL of disk / in-memory cache ( 60*60 = 3600 )
+if ( !file_exists( dirname( __FILE__ ) . '/config/config.php' ) )
+	die( 'Please copy `config-sample.php` to `config.php` in the project\'s `config` directory' );
+
+//grab config file
+require_once( dirname( __FILE__ ) . '/config/config.php' );
 
 //get core functions
 require_once DGS_BASE_DIR . '/includes/functions.php';
@@ -39,19 +40,19 @@ foreach ( array( 'items', 'agencies' ) as $plural ) {
 		continue;
 
 	//check APC Cache, if it's installed
-	if ( function_exists( 'apc_fetch' ) && $cache = apc_fetch ( $global_var ) ) {
+	if ( DGS_REPORT_DIR && function_exists( 'apc_fetch' ) && $cache = apc_fetch ( $global_var ) ) {
 		$$global_var = $cache->$plural;
 		continue;
 	}
 
 	//look for /data/ files and parse (disk cache)
-	if ( $file = dgs_get_disk_cache( $plural ) ) {
+	if ( DGS_REPORT_DIR && $file = dgs_get_disk_cache( $plural ) ) {
 		$$global_var = $file->$plural;
 		continue;
 	}
 
 	//try GitHub (mmm... dogfood)
-	if ( $file = dgs_get_live( $plural ) ) {
+	if ( DGS_REPORT_DIR && $file = dgs_get_live( $plural ) ) {
 		$$global_var = $file->$plural;
 		continue;
 	}
