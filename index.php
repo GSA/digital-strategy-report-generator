@@ -12,7 +12,6 @@ if ( !empty( $_POST ) )
 
 //output header
 dgs_header();
-dgs_sort($dgs_items);
 ?>
 
 <h1>Slash Digital Strategy Generator</h1>

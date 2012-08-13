@@ -344,9 +344,18 @@ function dgs_max_values( $item, $import ) {
 	return $max;
 	
 }
-function dgs_sort(&$items) {
-  foreach ($items as $obj) {
-    $order[$obj->id] = $obj;
-  }
-  array_multisort($order, SORT_ASC, $items);
+
+/**
+ * Helper function to sort items and agencies before generating
+ * @param array $items array of agency objects
+ * @param string $field field to sort by (optional, default ID)
+ * @param int $dir sort direction, either SORT_ASC or SORT_DESC (optional, default ASC)
+ */
+function dgs_sort( &$items, $field = 'id' , $dir = SORT_ASC ) {
+
+	foreach ($items as $obj)
+    	$order[ $obj->$field ] = $obj;
+
+    array_multisort( $order, $dir, $items );
+    
 }

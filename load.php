@@ -34,25 +34,26 @@ foreach ( array( 'items', 'agencies' ) as $plural ) {
 	// (3) Local /data/ directory, for non-expired cached files
 	// (4) GSA GitHub Repo
 	// (5) /config/ directory
+	// Note: change DGS_SCHEMA_BASE to FALSE and DGS_TTL to 0 in config.php to force local refresh
 
 	//look for global var already established, no need to re-parse
 	if ( isset( $$global_var ) )
 		continue;
 
 	//check APC Cache, if it's installed
-	if ( DGS_REPORT_DIR && function_exists( 'apc_fetch' ) && $cache = apc_fetch ( $global_var ) ) {
+	if ( function_exists( 'apc_fetch' ) && $cache = apc_fetch ( $global_var ) ) {
 		$$global_var = $cache->$plural;
 		continue;
 	}
 
 	//look for /data/ files and parse (disk cache)
-	if ( DGS_REPORT_DIR && $file = dgs_get_disk_cache( $plural ) ) {
+	if ( $file = dgs_get_disk_cache( $plural ) ) {
 		$$global_var = $file->$plural;
 		continue;
 	}
 
 	//try GitHub (mmm... dogfood)
-	if ( DGS_REPORT_DIR && $file = dgs_get_live( $plural ) ) {
+	if ( DGS_SCHEMA_BASE && $file = dgs_get_live( $plural ) ) {
 		$$global_var = $file->$plural;
 		continue;
 	}

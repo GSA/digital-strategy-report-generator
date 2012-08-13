@@ -7,6 +7,9 @@
 require_once 'config/agencies.php';
 require_once 'load.php';
 
+//sort agencies by name alpha ascending
+dgs_sort( $dgs_agencies, 'name' );
+
 //output JSON
 file_put_contents( DGS_BASE_DIR . '/data/agencies.json', json_encode( $dgs_agencies ) );
 
