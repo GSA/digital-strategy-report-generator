@@ -53,16 +53,17 @@ Changelog
 
 ### 1.1 ###
 * Better PHP 5.4 compatability (removed calltime pass by reference)
-* Added option to write generated file to web server for easier programatic access (props [Bill Severe](https://github.com/bsevere))
+* Added [option to write generated file to web server](https://github.com/GSA/digital-strategy-report-generator/commit/982322f66b922795690fa5f6cf80df52c85428e1) for easier programatic access (props [Bill Severe](https://github.com/bsevere))
 * Auto-import and propegation of generated values if report directory is set in config file (props [Bill Severe](https://github.com/bsevere))
 * Fix for generated filename to better conform to schema (`digital-strategy` -> `digitalstrategy`) (props [Bill Severe](https://github.com/bsevere))
-* Uses PHP's default temporary directory, rather than the `tmp/` folder within the project to generate files, simplifying installation and improving portability
-* Moved configuration to separate file to simplifying customization
-* Better sorting of agencies and action items in datafiles and in the generator (props [Bill Severe](https://github.com/bsevere))
-* Abilitity to bypass GitHub service and local cache to force generation of fresh datafiles
+* [Uses PHP's default temporary directory](https://github.com/GSA/digital-strategy-report-generator/commit/7c258423d87552dafabe0bade224e3e77a310a09), rather than the `tmp/` folder within the project to generate files, simplifying installation and improving portability
+* [Moved configuration](https://github.com/GSA/digital-strategy-report-generator/commit/e99e7796bb2a7932bcd17e33f709bef876337da0) to separate file to simplifying customization
+* [Better sorting](https://github.com/GSA/digital-strategy-report-generator/commit/edbf30006fe4b6403c7a165709b31a2c474782ae) of agencies and action items in datafiles and in the generator (props [Bill Severe](https://github.com/bsevere))
+* [Abilitity to bypass GitHub service and local cache](https://github.com/GSA/digital-strategy-report-generator/commit/edbf30006fe4b6403c7a165709b31a2c474782ae) to force generation of fresh datafiles
 * Clarified requirements, installation instructions, and usage as a service
-* Corrected typos in readme (props [Bill Severe](https://github.com/bsevere))
-* Fix for multiple values not being properly propegated into generated file in some circumstances (thanks to John Bent for reporting)
+* [Corrected typos in readme](https://github.com/GSA/digital-strategy-report-generator/commit/61f38141560c4cf6898c91d51125c821703d80ca) (props [Bill Severe](https://github.com/bsevere))
+* [Fix for multiple values not being properly propegated](https://github.com/GSA/digital-strategy-report-generator/commit/d5265413bd50c222ba96f04a277046f2a840cc47) into generated file in some circumstances (thanks to John Bent for reporting)
+* [Better versioning of API generator](https://github.com/GSA/digital-strategy-report-generator/commit/082c07904b0ef18fa7e32792bda7710ac84ab4da)
 
 License
 -------
