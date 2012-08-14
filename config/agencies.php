@@ -71,7 +71,7 @@ $dgs_agencies = array(
 		new DGS_Agency( 'Department of Homeland Security', 'DHS', 'http://www.dhs.gov' ),
 		new DGS_Agency( 'Department of Housing and Urban Development', 'HUD', 'http://www.hud.gov' ),
 		new DGS_Agency( 'Department of Justice', 'DOJ', 'http://www.justice.gov' ),
-		new DGS_Agency( 'Department of Labor', 'DOL', 'http://www.labor.gov' ),
+		new DGS_Agency( 'Department of Labor', 'DOL', 'http://www.dol.gov' ),
 		new DGS_Agency( 'Department of State', 'DOS', 'http://www.state.gov' ),
 		new DGS_Agency( 'Department of the Air Force', 'AF', 'http://www.af.mil/' ),
 		new DGS_Agency( 'Department of the Army', 'ARMY', 'http://www.army.mil/' ),
