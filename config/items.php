@@ -181,55 +181,6 @@ $dgs_items = array(
 				),
 			)),
 
-		new DGS_Action_Item( array(
-				'id' => '4.2.1',
-				'parent' => '4.2',
-				'text' => 'Goals',
-				'due' => '6 months',
-				'fields' => array(
-					new DGS_field( array(
-							'type' => 'text',
-							'name' => 'goal',
-							'label' => 'Goal',
-						)),
-					new DGS_field( array(
-							'type' => 'textarea',
-							'name' => 'measure',
-							'label' => 'Measure',
-						)),
-					new DGS_field( array(
-							'type' => 'text',
-							'name' => 'completion-date',
-							'label' => 'Target completion date',
-						))
-				)
-			)),
-
-		new DGS_Action_Item( array(
-				'id' => '4.2.3',
-				'text' => 'Set specified agency-wide policies and standards',
-				'parent' => '4.2',
-				'due' => '6 months',
-				'multiple' => true,
-				'fields' => array(
-					new DGS_field( array(
-							'type' => 'text',
-							'name' => 'standard',
-							'label' => 'Policy or standard',
-						)),
-					new DGS_field( array(
-							'type' => 'select',
-							'name' => 'status',
-							'label' => 'Overall Status',
-							'options' => array(
-								new DGS_Option( 'not-started', 'Not Started' ),
-								new DGS_Option( 'in-progress', 'In Progress' ),
-								new DGS_Option( 'completed', 'Completed' ),
-							)
-						)),
-				),
-			)),
-
 		//5.2
 		new DGS_Action_Item( array(
 				'id' => '5.2',
