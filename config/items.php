@@ -168,6 +168,11 @@ $dgs_items = array(
 								new DGS_Option( 'completed', 'Completed' ),
 							)
 						)),
+                	new DGS_field( array(
+							'type' => 'textarea',
+							'name' => 'policy',
+							'label' => 'Paragraph on policy',
+						)),
 					new DGS_field( array(
 							'type' => 'text',
 							'name' => 'link',
@@ -241,19 +246,6 @@ $dgs_items = array(
 								new DGS_Option( 'completed', 'Completed' ),
 							)
 						)),
-				),
-			)),
-		new DGS_Action_Item( array(
-				'id' => '5.2.1',
-				'text' => 'Develop mobile device inventory',
-				'due' => '6 months',
-				'parent' => '5.2',
-				'fields' => array(
-					new DGS_field( array(
-							'type' => 'text',
-							'name' => 'link',
-							'label' => 'Link to inventory',
-						))
 				),
 			)),
 		new DGS_Action_Item( array(
