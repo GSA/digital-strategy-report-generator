@@ -214,17 +214,7 @@ $dgs_items = array(
 					new DGS_field( array(
 							'type' => 'select',
 							'name' => 'device-inventory-status',
-							'label' => 'Mobile Device Inventory Status',
-							'options' => array(
-								new DGS_Option( 'not-started', 'Not Started' ),
-								new DGS_Option( 'in-progress', 'In Progress' ),
-								new DGS_Option( 'completed', 'Completed' ),
-							)
-						)),
-					new DGS_field( array(
-							'type' => 'select',
-							'name' => 'contract-inventory-status',
-							'label' => 'Wireless Service Contract Inventory Status',
+							'label' => 'Inventory Status',
 							'options' => array(
 								new DGS_Option( 'not-started', 'Not Started' ),
 								new DGS_Option( 'in-progress', 'In Progress' ),
