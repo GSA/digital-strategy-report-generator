@@ -250,7 +250,7 @@ $dgs_items = array(
 			)),
 		new DGS_Action_Item( array(
 				'id' => '5.2.2',
-				'text' => 'Develop wireless service contract inventory',
+				'text' => 'Develop mobile device and wireless service contract inventories',
 				'due' => '6 months',
 				'parent' => '5.2',
 				'multiple' => true,
