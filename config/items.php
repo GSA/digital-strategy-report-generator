@@ -171,12 +171,12 @@ $dgs_items = array(
                 	new DGS_field( array(
 							'type' => 'textarea',
 							'name' => 'policy',
-							'label' => 'Paragraph on policy',
+							'label' => 'Paragraph on Governance',
 						)),
 					new DGS_field( array(
 							'type' => 'text',
 							'name' => 'link',
-							'label' => 'Link to governance document',
+							'label' => 'Link to Governance Document',
 						))
 				),
 			)),
