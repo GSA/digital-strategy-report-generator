@@ -228,7 +228,7 @@ $dgs_items = array(
 		new DGS_Action_Item( array(
 				'id' => '8.2',
 				'text' => 'Implement performance and customer satisfaction measuring tools on all .gov websites',
-				'due' => '1/22/12',
+				'due' => '1-22-13',
 				'fields' => array(
 					new DGS_field( array(
 							'type' => 'select',
@@ -246,7 +246,7 @@ $dgs_items = array(
 				'id' => '8.2.1',
 				'parent' => '8.2',
 				'text' => 'Implement performance measurement tool',
-				'due' => '1/22/12',
+				'due' => '1-22-13',
 				'fields' => array(
 					new DGS_field( array(
 							'type' => 'textarea',
@@ -259,7 +259,7 @@ $dgs_items = array(
 				'id' => '8.2.2',
 				'parent' => '8.2',
 				'text' => 'Implement customer satisfaction tool',
-				'due' => '1/22/12',
+				'due' => '1-22-13',
 				'fields' => array(
 					new DGS_field( array(
 							'type' => 'textarea',
