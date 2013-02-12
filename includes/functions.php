@@ -29,7 +29,7 @@ function dgs_to_xml( $array, $xml ) {
 
 				//simple key/value child pair
 			} else {
-			$xml->addChild( $key, $value );
+			$xml->addChild( $key, htmlspecialchars($value) );
 		}
 
 	}
