@@ -295,11 +295,6 @@ $dgs_items = array(
 				'due' => '6 months',
 				'fields' => array(
 					new DGS_field( array(
-							'type' => 'text',
-							'name' => 'url',
-							'label' => 'URL of policy',
-						)),
-					new DGS_field( array(
 							'type' => 'textarea',
 							'name' => 'description',
 							'label' => 'Describe policy',
@@ -307,15 +302,35 @@ $dgs_items = array(
 				),
 			)),
 		new DGS_Action_Item( array(
-				'id' => '1.2.2',
+				'id' => '1.2.3',
 				'parent' => '1.2',
-				'text' => 'Operationalize /developer page',
-				'due' => '12 months',
+				'text' => 'Operationalize Enterprise Data Inventory',
+				'due' => '17 months',
 				'fields' => array(
 					new DGS_field( array(
 							'type' => 'text',
-							'name' => 'url',
-							'label' => 'URL of page',
+							'name' => 'datasets-in-inventory',
+							'label' => 'Number of datasets in the Enterprise Data Inventory',
+						)),
+					new DGS_field( array(
+							'type' => 'text',
+							'name' => 'systems-in-inventory',
+							'label' => 'Number of systems whose datasets are in the Enterprise Data Inventory',
+						)),
+					new DGS_field( array(
+							'type' => 'text',
+							'name' => 'datasets-potential-public',
+							'label' => 'Number of datasets that can be made publicly available',
+						)),
+					new DGS_field( array(
+							'type' => 'text',
+							'name' => 'datasets-listed',
+							'label' => 'Number of datasets listed on the /data page',
+						)),
+					new DGS_field( array(
+							'type' => 'text',
+							'name' => 'datasets-in-inventory',
+							'label' => 'Number of released datasets listed on the /data page',
 						)),
 				),
 			)),
@@ -341,21 +356,21 @@ $dgs_items = array(
 		new DGS_Action_Item( array(
 				'id' => '2.2.1',
 				'parent' => '2.1',
-				'text' => 'Make 2+ systems (datasets) available via web APIs with metadata tags',
+				'text' => 'Publish plan on future activity',
 				'due' => '12 months',
 				'multiple' => true,
 				'fields' => array(
 					new DGS_field( array(
-							'type' => 'text',
-							'name' => 'url',
-							'label' => 'URL of page',
+							'type' => 'textarea',
+							'name' => 'describe',
+							'label' => 'Describe Implementation',
 						)),
 				),
 			)),
 		new DGS_Action_Item( array(
 				'id' => '2.2.2',
 				'parent' => '2.1',
-				'text' => 'Publish plan on future activity',
+				'text' => 'Make 2+ systems (datasets) available via web APIs with metadata tags',
 				'due' => '12 months',
 				'multiple' => true,
 				'fields' => array(
@@ -386,13 +401,13 @@ $dgs_items = array(
 						)),
 					new DGS_field( array(
 							'type' => 'text',
-							'name' => 'url',
-							'label' => 'Endpoint URL',
+							'name' => 'uii',
+							'label' => 'Unique Investment Identifier',
 						)),
 					new DGS_field( array(
-							'type' => 'textarea',
-							'name' => 'compliance',
-							'label' => 'Summary of policy compliance',
+							'type' => 'text',
+							'name' => 'url',
+							'label' => 'API Link',
 						)),
 				),
 			)),
@@ -416,7 +431,7 @@ $dgs_items = array(
 					new DGS_field( array(
 							'type' => 'textarea',
 							'name' => 'policy',
-							'label' => 'Paragraph on policy',
+							'label' => 'Describe Implementation',
 						)),
 				),
 			)),
@@ -440,7 +455,7 @@ $dgs_items = array(
 					new DGS_field( array(
 							'type' => 'textarea',
 							'name' => 'policy',
-							'label' => 'Paragraph on policy',
+							'label' => 'Describe Implementation',
 						)),
 				),
 			)),
@@ -463,8 +478,8 @@ $dgs_items = array(
 						)),
 					new DGS_field( array(
 							'type' => 'textarea',
-							'name' => 'url',
-							'label' => 'URL of plan',
+							'name' => 'policy',
+							'label' => 'Describe Implementation',
 						)),
 				),
 			)),
@@ -502,13 +517,13 @@ $dgs_items = array(
 						)),
 					new DGS_field( array(
 							'type' => 'text',
-							'name' => 'url',
-							'label' => 'URL of service',
+							'name' => 'uii',
+							'label' => 'Unique Investment Identifier',
 						)),
 					new DGS_field( array(
-							'type' => 'textarea',
-							'name' => 'optimizations',
-							'label' => 'Summary of optimizations',
+							'type' => 'text',
+							'name' => 'url',
+							'label' => 'URL of service',
 						)),
 				),
 			)),
