@@ -358,7 +358,7 @@ $dgs_items = array(
 				'parent' => '2.1',
 				'text' => 'Publish plan on future activity',
 				'due' => '12 months',
-				'multiple' => true,
+				'multiple' => false,
 				'fields' => array(
 					new DGS_field( array(
 							'type' => 'textarea',
