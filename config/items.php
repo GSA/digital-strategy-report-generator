@@ -297,7 +297,7 @@ $dgs_items = array(
 					new DGS_field( array(
 							'type' => 'textarea',
 							'name' => 'description',
-							'label' => 'Describe policy',
+							'label' => 'Describe implementation',
 						)),
 				),
 			)),
