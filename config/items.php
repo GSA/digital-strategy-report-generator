@@ -497,7 +497,7 @@ $dgs_items = array(
 						)),
 					new DGS_field( array(
 							'type' => 'textarea',
-							'name' => 'name',
+							'name' => 'description',
 							'label' => 'Service Description',
 						)),
 					new DGS_field( array(
