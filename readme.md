@@ -3,6 +3,8 @@ Digital Government Strategy Report Generator
 
 Generates reports to describe agencies' progress in realizing the goals of the President's Digital Government Strategy
 
+[There is a hosted instance located here](http://digital-strategy-generator.apievangelist.com/).  
+
 Goals
 ----------
 
