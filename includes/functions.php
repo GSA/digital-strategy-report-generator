@@ -163,7 +163,10 @@ function dgs_to_html( $report ) {
 
 <h1>Digital Government Strategy Report for the <?php echo dgs_agency_name( $report->agency ); ?></h1>
 
-<?php foreach ( $report->items as $item ) {
+<?php
+// Sort array before building HTML output.
+dgs_sort($report->items);
+foreach ( $report->items as $item ) {
 
 		//if this is a sub-item, output as an h3, otherwise, output as an h2
 		$tag = ( $item->parent == null ) ? 'h2' : 'h3';

@@ -50,6 +50,8 @@ foreach ( $dgs_agencies as $option )
 	
 $form->add( $agency );
 
+// Sort items before building HTML output.
+dgs_sort($dgs_items);
 //loop thorugh each action item
 foreach ( $dgs_items as $item ) {
 

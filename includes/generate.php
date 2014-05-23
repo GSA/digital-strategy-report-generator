@@ -84,9 +84,13 @@ readfile( "{$dir}/$filename" );
 
 //Check for a value in the report directory constant
 //if it exists, move the files into the report directory for easy access before clearing the scratch directory
-if ( DGS_REPORT_DIR )
-	copy( $dir, DGS_REPORT_DIR );
-
+if ( DGS_REPORT_DIR ) {
+	foreach ( scandir( $dir ) as $file ) {
+		if ( substr( $file, 0, 15 ) == 'digitalstrategy' ) {
+			copy( "$dir/$file", DGS_REPORT_DIR . "/$file" );
+		}
+	}
+}
 //cleanup
 dgs_cleanup( $dir );
 
