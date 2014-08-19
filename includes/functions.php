@@ -20,7 +20,7 @@ function dgs_to_xml( $array, $xml ) {
 
 		//if this is an attribute, treat as an attribute
 		if ( in_array( $key, $attributes ) ) {
-			$xml->addAttribute( $key, $value );
+			$xml->addAttribute( $key, htmlentities($value, ENT_XML1) );
 
 			//if this value is an object or array, add a child node and treat recursively
 		} else if ( is_object( $value ) || is_array( $value ) ) {
@@ -29,7 +29,7 @@ function dgs_to_xml( $array, $xml ) {
 
 				//simple key/value child pair
 			} else {
-			$xml->addChild( $key, $value );
+			$xml->addChild( $key, htmlentities($value, ENT_XML1) );
 		}
 
 	}
@@ -168,33 +168,33 @@ function dgs_to_html( $report ) {
 		//if this is a sub-item, output as an h3, otherwise, output as an h2
 		$tag = ( $item->parent == null ) ? 'h2' : 'h3';
 
-		echo "<{$tag}>{$item->id}. $item->text</{$tag}>\n";
+		echo "<{$tag}>{$item->id}. ".htmlentities($item->text, ENT_XHTML)."</{$tag}>\n";
 
 		//simple single field, just output
 		if ( !$item->multiple ) {
-		
-			foreach ( $item->fields as $field ) 
-				echo "\t<strong>{$field->label}</strong>: $field->value<br />\n";
-				
+
+			foreach ( $item->fields as $field )
+				echo "\t<strong>{$field->label}</strong>: ".htmlentities($field->value, ENT_XHTML)."<br />\n";
+
 			continue;
-			 
+
 		}
 
 		//we've got a multi-response field
 		//right now they're grouped by field, we want the answers to align
 		$values = array();
 		foreach ( $item->fields as $field )
-			foreach ( $field->value as $ID => $value ) 
-				$values[$ID][$field->label] = $value; 
+			foreach ( $field->value as $ID => $value )
+				$values[$ID][$field->label] = $value;
 
 		foreach ( $values as $value ) {
-			
+
 			foreach ( $value as $k => $v )
-				echo "\t<strong>{$k}</strong>: $v<br />\n";
-			
+				echo "\t<strong>{$k}</strong>: ".htmlentities($v, ENT_XHTML)."<br />\n";
+
 			echo "<hr >";
 		}
-		
+
 	} //close item loop ?>
 
 <p><em>Last updated <?php echo date( 'F n, o', strtotime( $report->generated ) ); ?> at <?php echo date( 'g:i a', strtotime( $report->generated ) ); ?></em></p>
@@ -231,24 +231,24 @@ function dgs_values() {
 	//loop through each field and create key/value pairs to pass to form generator
 	// but lets sanitize before we do for good measure
 	foreach ( $import->items as $item ) {
-		
+
 		//simple field
 		if ( !$item->multiple ) {
-		
-			foreach ( $item->fields as $field ) 
+
+			foreach ( $item->fields as $field )
 				$values[ $field->name ] = strip_tags( $field->value );
-			
+
 		} else {
-		
+
 			//multi field
-			foreach ( $item->fields as $field ) 
-				foreach ( $field->value as $key => $value ) 
+			foreach ( $item->fields as $field )
+				foreach ( $field->value as $key => $value )
 					$values[ $field->name ][$key] = strip_tags( $value );
 
 		}
-		
+
 	}
-	
+
 	return $values;
 
 }
@@ -321,28 +321,28 @@ function dgs_get_live( $file ) {
  * @param object $item the item object
  * @param array the import array
  * @return int the maximum number of responses to any field within the item
- */ 
+ */
 function dgs_max_values( $item, $import ) {
 
 	$max = 1;
 
 	if ( !$item->multiple )
-		return $max;  
-	
+		return $max;
+
 	foreach ( $item->fields as $field ) {
-		
+
 		//didn't import this field
 		if ( !isset( $import[ $field->name ] ) )
 			continue;
-	
+
 		$field = $import[ $field->name ];
-		
+
 		if ( sizeof( $field ) > $max )
-			$max = sizeof( $field ); 
+			$max = sizeof( $field );
 	}
 
 	return $max;
-	
+
 }
 
 /**
@@ -357,11 +357,11 @@ function dgs_sort( &$items, $field = 'id' , $dir = SORT_ASC ) {
     	$order[ $obj->$field ] = $obj;
 
     array_multisort( $order, $dir, $items );
-    
+
 }
 
 function dgs_prepend_generator_version( $array ) {
 
 	return array_merge( array( 'generator_version' => DGS_VERSION ), $array );
-	
+
 }
