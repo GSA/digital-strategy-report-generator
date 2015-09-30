@@ -36,7 +36,7 @@ Usage as a service
 How it Works
 ------------
 
-The first time you load index.php, the generator will make a call to [two JSON files hosted in GSA's GitHub repository](https://github.com/GSA/digital-strategy). These files contain the schema which defines the report, as well as a list of federal agencies and their common abreviations. These files will be cached locally to disk and will remain there for up to an hour.
+The first time you load index.php, the generator will make a call to [two JSON files hosted in GSA's GitHub repository](https://github.com/GSA/digital-strategy). These files contain the schema which defines the report, as well as a list of federal agencies and their common abbreviations. These files will be cached locally to disk and will remain there for up to an hour.
 
 It will then spit out a simple form representing the fields as described in the schema file. Upon submitting the form, you will recieve a zip file download containing valid HTML, XML, and JSON representations of your responses. The JSON and XML versions are designed to be placed, as is, at agency.gov/digitalstrategy.xml and agency.gov/digitalstrategy.json. The HTML version is designed to be pasted into a CMS or used as is.  Adding a value to the DGS_REPORT_DIR constant in the load.php file will cause the script to add unzipped versions of the reports to that directory.
 
